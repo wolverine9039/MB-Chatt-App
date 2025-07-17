@@ -22,14 +22,11 @@ public class splash extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent=new Intent(splash.this, MainActivity.class);
+        new Handler().postDelayed(() -> {
+            Intent intent=new Intent(splash.this, MainActivity.class);
 
-                startActivity(intent);
-                finish(); // Close current activity
-            }
+            startActivity(intent);
+            finish(); // Close current activity
         }, 3000);
     }
 }
