@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "492486720286",
+    "project_id": "mb-chats",
+    "storage_bucket": "mb-chats.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:492486720286:android:d2a203500a5dc2f1a0670f",
+        "android_client_info": {
+          "package_name": "com.example.mbchats"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA25VSdRoa4AtUy7m8nTQoLEV2NG3qq-hE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
