@@ -23,7 +23,7 @@ public class splash extends AppCompatActivity {
             return insets;
         });
         new Handler().postDelayed(() -> {
-            Intent intent=new Intent(splash.this, Registration.class);
+            Intent intent=new Intent(splash.this, login.class);
 
             startActivity(intent);
             finish(); // Close current activity
