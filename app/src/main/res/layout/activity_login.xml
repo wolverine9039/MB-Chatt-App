@@ -77,19 +77,19 @@
         android:layout_height="30dp"
         android:fontFamily="@font/poppins_regular"
         android:gravity="center"
-        android:text="Need and account"
+        android:text="Need an account"
         android:textColor="@color/black"
         android:textSize="@dimen/_10sdp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.947" />
+        app:layout_constraintVertical_bias="0.94" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/textView8Signup"
         android:layout_width="165dp"
         android:layout_height="30dp"
         android:fontFamily="@font/poppins_regular"
@@ -100,7 +100,7 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.977" />

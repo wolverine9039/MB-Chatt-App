@@ -7,6 +7,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -24,6 +25,7 @@ import com.google.firebase.auth.FirebaseAuth;
 public class login extends AppCompatActivity {
     Button login_button;
     EditText Email, edpass;
+    TextView Signup;
 
     String email_pattern="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     FirebaseAuth auth;
@@ -42,6 +44,12 @@ public class login extends AppCompatActivity {
         login_button=findViewById(R.id.login_button);
         Email=findViewById(R.id.Log_Email);
         edpass=findViewById(R.id.log_Password);
+        Signup=findViewById(R.id.textView8Signup);
+
+        Signup.setOnClickListener(v -> {
+            Intent ikl=new Intent(login.this,Registration.class);
+            startActivity(ikl);
+        });
 
         login_button.setOnClickListener(new View.OnClickListener() {
             @Override
