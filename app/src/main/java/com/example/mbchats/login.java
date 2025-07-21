@@ -1,6 +1,7 @@
 package com.example.mbchats;
 
 import android.annotation.SuppressLint;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -28,6 +29,7 @@ public class login extends AppCompatActivity {
     TextView Signup;
 
     String email_pattern="[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    android.app.ProgressDialog progressDialog;
     FirebaseAuth auth;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,6 +43,9 @@ public class login extends AppCompatActivity {
             return insets;
         });
         auth=FirebaseAuth.getInstance();
+        progressDialog=new ProgressDialog(this);
+        progressDialog.setMessage("Please wait....");
+        progressDialog.setCancelable(false);
         login_button=findViewById(R.id.login_button);
         Email=findViewById(R.id.Log_Email);
         edpass=findViewById(R.id.log_Password);
@@ -59,12 +64,16 @@ public class login extends AppCompatActivity {
 
                 if((TextUtils.isEmpty(email)))
                 {
+                    progressDialog.dismiss();
                   Toast.makeText(login.this, "Enter email",Toast.LENGTH_SHORT).show();
                 } else if ((TextUtils.isEmpty(pass))) {
+                    progressDialog.dismiss();
                     Toast.makeText(login.this, "Enter the password",Toast.LENGTH_SHORT).show();
                 } else if (!email.matches(email_pattern)) {
+                    progressDialog.dismiss();
                     Email.setError("Give proper Email Address");
                 } else if (pass.length()<6) {
+                    progressDialog.dismiss();
                     edpass.setError("not valid");
                     Toast.makeText(login.this,"must be more than 6 digits",Toast.LENGTH_SHORT).show();
 
@@ -75,6 +84,7 @@ public class login extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful())
                             {
+                                progressDialog.show();
                                 try {
                                     Intent i=new Intent(login.this, MainActivity.class);
                                     startActivity(i);

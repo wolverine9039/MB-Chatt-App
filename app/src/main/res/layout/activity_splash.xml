@@ -8,8 +8,36 @@
     android:background="#fbf5e9"
     tools:context=".splash">
 
+    <TextView
+        android:id="@+id/own2"
+        android:layout_width="195dp"
+        android:layout_height="22dp"
+
+        android:gravity="center"
+        android:text="Mayank"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.958" />
+
+    <TextView
+        android:id="@+id/own1"
+        android:layout_width="195dp"
+        android:layout_height="23dp"
+
+        android:gravity="center"
+        android:text="from"
+        android:textSize="@dimen/_12sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.926" />
+
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/logoimg"
         android:layout_width="@dimen/_160sdp"
         android:layout_height="@dimen/_84sdp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,7 +49,7 @@
         app:srcCompat="@drawable/logomb" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/logonameimg"
         android:layout_width="@dimen/_337sdp"
         android:layout_height="@dimen/_103sdp"
         android:fontFamily="@font/apptext"
@@ -33,6 +61,6 @@
         app:layout_constraintHorizontal_bias="0.518"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.462" />
+        app:layout_constraintVertical_bias="0.465" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

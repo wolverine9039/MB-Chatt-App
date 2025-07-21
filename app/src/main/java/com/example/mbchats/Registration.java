@@ -44,7 +44,7 @@ public class Registration extends AppCompatActivity {
     FirebaseDatabase database;
     FirebaseStorage storagee;
     CircleImageView RGprofileimage;
-    FirebaseAuth auth;
+   private FirebaseAuth auth;
     Uri imageURI;
     String Imageuri;
     String statuss = "Hey I am Using This application";
@@ -69,7 +69,7 @@ public class Registration extends AppCompatActivity {
 
         // Initialize Firebase components
         auth = FirebaseAuth.getInstance();
-        database = FirebaseDatabase.getInstance();
+        database = FirebaseDatabase.getInstance("https://mb-chats-default-rtdb.firebaseio.com/");
         storagee = FirebaseStorage.getInstance();
 
         loginb = findViewById(R.id.login);
@@ -189,7 +189,7 @@ public class Registration extends AppCompatActivity {
                         @Override
                         public void onFailure(@NonNull Exception e) {
                             Log.e(TAG, "Image upload failed, using default image", e);
-                            Imageuri = "https://firebasestorage.googleapis.com/v0/b/mb-chats.appspot.com/o/default_profile.png?alt=media";
+                            Imageuri = "https://firebasestorage.googleapis.com/v0/b/mb-chats.firebasestorage.app/o/man.png?alt=media&token=ce528211-aadd-45dd-bc6a-bc783018b49e";
                             Users users = new Users(UniqID, namee, Emaill, passss, REpass, Imageuri, statuss);
                             saveUserToDatabase(refrencde, users);
                         }
