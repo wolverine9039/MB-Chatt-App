@@ -52,8 +52,14 @@ public class login extends AppCompatActivity {
         Signup=findViewById(R.id.textView8Signup);
 
         Signup.setOnClickListener(v -> {
-            Intent ikl=new Intent(login.this,Registration.class);
-            startActivity(ikl);
+           try {
+               Intent ikl=new Intent(login.this,registration.class);
+               startActivity(ikl);
+
+           }catch (Exception e)
+           {
+             Toast.makeText(login.this,e.toString(),Toast.LENGTH_SHORT).show();
+           }
         });
 
         login_button.setOnClickListener(new View.OnClickListener() {
