@@ -1,8 +1,12 @@
 package com.example.mbchats;
 
 import android.annotation.SuppressLint;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
@@ -27,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
     UserAdapter adpter;
     FirebaseDatabase DB;
     ArrayList<Users> usersArrayList;
+    ImageView imglogout;
 FirebaseAuth auth;
     @SuppressLint("MissingInflatedId")
     @Override
@@ -64,6 +69,36 @@ FirebaseAuth auth;
 
             }
         });
+        imglogout=findViewById(R.id.logoutimg);
+        imglogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog=new Dialog(MainActivity.this);
+                dialog.setContentView(R.layout.dialog_layout);
+                Button no,yes;
+                yes=dialog.findViewById(R.id.yesbtn);
+                no=dialog.findViewById(R.id.nobtn);
+                no.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+                yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                      auth.signOut();
+                        Intent intt=new Intent(MainActivity.this,login.class);
+                        startActivity(intt);
+                        dialog.dismiss();
+                    }
+                });
+                dialog.show();
+
+            }
+        });
+
+
 
         mainUserRecyclerView=findViewById(R.id.mainUserRecyclerView);
         mainUserRecyclerView.setLayoutManager(new LinearLayoutManager(this));
